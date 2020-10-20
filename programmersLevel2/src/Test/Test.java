@@ -11,17 +11,11 @@ import java.util.Scanner;
 public class Test {
 	public static void main(String[] args) throws IOException {
 		
-		String word = "철수랑 영희랑 밥을 먹는다";
-		String[] word2 = word.split(" ");
-		String a = Arrays.toString(word2);
-		System.out.println(a);
-		for(String i : word2) {
-			System.out.println(i);
+		char a = '(';
+		if(a==')') {
+			System.out.println(1);
+		}else {
+			System.out.println(2);
 		}
-		
-		//1 2 3 4 5 
-		//{"1", "2", "3", "4", "5"}
-		//1 = Integer.parseInt("1");
-		
 	}
 }
