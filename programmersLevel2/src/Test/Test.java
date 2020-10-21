@@ -1,21 +1,19 @@
 package Test;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		
-		char a = '(';
-		if(a==')') {
-			System.out.println(1);
-		}else {
-			System.out.println(2);
-		}
+//		String a = "a";
+//		a.equals(anObject);
+		List<Testvo> a = new ArrayList<>();
+		
+		a.add(new Testvo("1", "2", "2"));
+		a.get(0).getId().equals(args[0]);
+		
+		a.toString();
+		
 	}
 }
