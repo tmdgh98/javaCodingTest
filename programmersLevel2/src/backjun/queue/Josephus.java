@@ -9,14 +9,39 @@
 
 package backjun.queue;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Josephus {
 	public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
 		int n = sc.nextInt();
 		int k = sc.nextInt();
-		int[] arr = new int[n];
+		ArrayList<Integer> list = new ArrayList<Integer>();
+//		List<Integer> list = new ArrayList<Integer>();
+		for (int i = 0; i < n; i++) {
+			list.add(i+1);
+		}
+		int location = 0;
+		k--;
+		boolean first = true;
+		while(list.size()>1) {
+			location+=k;
+			while(location>=list.size()) {
+				location %= list.size();
+			}
+			if(first) {
+				sb.append("<"+list.get(location));
+				first=false;
+			}else {
+				sb.append(", "+list.get(location));
+			}
+			list.remove(location);
+		}
+		sb.append(", "+list.get(0) +">");
+		System.out.println(sb);
 		
 	}
 }
