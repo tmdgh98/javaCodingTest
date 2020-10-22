@@ -1,4 +1,4 @@
-package backjun;
+package backjun.Factorial;
 
 import java.util.Scanner;
 

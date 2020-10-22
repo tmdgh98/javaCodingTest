@@ -10,8 +10,45 @@
 //2번, 3번 연산의 최솟값을 출력하는 프로그램을 작성하시오.
 package backjun.queue;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class RotatingQueue {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		int num = sc.nextInt();
+		for (int i = 0; i < num; i++) {
+			list.add(i+1);
+		}
+		int n=sc.nextInt();
+		int count=0;
+		for (int i = 0; i < n; i++) {
+			int target = sc.nextInt();
+			int length=0;
+			for (int j = 0; j < list.size(); j++) {
+				if(list.get(j)==target) {
+					length = j;
+					break;
+				}
+			}
+			boolean tw = ((list.size()-length)>length)?true:false;
+			while(list.get(0)!=target) {
+				if(tw) {
+					count++;
+					list.add(list.get(0));
+					list.remove(0);
+				}else {
+					count++;
+					list.add(0, list.get(list.size()-1));
+					list.remove(list.size()-1);
+				}
+			}
+			list.remove(0);
+		}
+		System.out.println(count);
 		
 	}
 }
+
+

@@ -2,18 +2,32 @@ package Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class Test {
+import java.util.Scanner;
+
+public class Test{
 	public static void main(String[] args) {
-		ArrayList<Integer> list = new ArrayList<Integer>();
 		
-		for (int i = 0; i < 5; i++) {
-			list.add(1);
+		Scanner sc = new Scanner(System.in);
+		
+		int a;
+		int b;
+		
+		
+		
+		
+		
+		while(sc.hasNextInt()) {
+			a= sc.nextInt();
+			b= sc.nextInt();
+			
+			System.out.println(a+b);
+			
+			
 		}
-		list.add(0, 2);
-		for(int a : list) {
-			System.out.println(a);
-		}
-	
+		
+		
+		
 	}
 }
