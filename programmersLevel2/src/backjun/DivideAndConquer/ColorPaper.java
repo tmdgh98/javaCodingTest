@@ -1,5 +1,5 @@
 
-package backjunDivideAndConquer;
+package backjun.DivideAndConquer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
