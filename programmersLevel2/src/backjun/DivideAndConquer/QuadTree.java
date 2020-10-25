@@ -15,9 +15,9 @@ public class QuadTree {
 				arr[i][j] = row.charAt(j);
 			}
 		}
-		sb.append('(');
+//		sb.append('(');
 		quad(n);
-		sb.append(')');
+//		sb.append(')');
 		System.out.println(sb);
 	}
 	public static void quad(int n) {
@@ -38,10 +38,16 @@ public class QuadTree {
 				}
 			}
 			if(div) {
+				if(fml.equals("first")) {
+					sb.append("(");
+				}
 				quad(x,y,n/2,"first");
 				quad(x,y+n/2,n/2,"mid");
 				quad(x+n/2,y,n/2,"mid");
 				quad(x+n/2,y+n/2,n/2,"last");
+				if(fml.equals("last")) {
+					sb.append(")");
+				}
 			}else {
 				print(x,y,fml);
 			}
