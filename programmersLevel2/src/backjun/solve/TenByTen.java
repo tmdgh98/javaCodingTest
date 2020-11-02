@@ -10,7 +10,7 @@ public class TenByTen {
 		String print ="";
 		for (int i = 0; i < str.length(); i++) {
 			print += str.charAt(i);
-			if((i!=0&&i%10==0)||i==str.length()-1) {
+			if((i!=0&&(i+1)%10==0)||i==str.length()-1) {
 				System.out.println(print);
 				print="";
 			}

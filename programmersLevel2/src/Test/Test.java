@@ -4,9 +4,11 @@ package Test;
 
 public class Test{
 	public static void main(String[] args) {
-		int a =10;
-		int b ='a'+ a;
+		int a = 10;
+		int b = 14;
 		char c = (char)('a' + a);
-		System.out.println(c);
+		System.out.println(a^b);
+		System.out.println(a&b);
+		System.out.println(a|b);
 	}
 }
