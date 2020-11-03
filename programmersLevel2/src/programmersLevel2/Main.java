@@ -8,9 +8,14 @@ import javax.xml.transform.Source;
 public class Main {
 
 	public static void main(String[] args) {
-		MaxNum mn = new MaxNum();
-		int[] numbers = {6,10,2};
-		mn.solution(numbers);
+		TrianglularSnail ts = new TrianglularSnail();
+		int[] arr = ts.solution(3);
+		
+		for(int a : arr) {
+			System.out.print(a+" ");
+			
+		}
 	}
 
 }
+//[20, 15, 2, 5, 15, 18, 14, 15, 20, 27, 29, 31, 36, 30, 32, 34]
