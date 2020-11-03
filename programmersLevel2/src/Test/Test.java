@@ -4,11 +4,15 @@ package Test;
 
 public class Test{
 	public static void main(String[] args) {
-		int a = 10;
-		int b = 14;
-		char c = (char)('a' + a);
-		System.out.println(a^b);
-		System.out.println(a&b);
-		System.out.println(a|b);
+		test2 te = new test2();
+		
+		int sum =te.sum(10,11);
+		System.out.println(sum);
+		
+		te.sum(4.5, 5.5);
+		String a = "abcdeadfsag";
+		
+		System.out.println(a.substring(1));
+		System.out.println(a.substring(1, 3));
 	}
 }

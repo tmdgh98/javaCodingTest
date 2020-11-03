@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class DfsBfsEx {
@@ -39,7 +40,41 @@ public class DfsBfsEx {
 		StringBuilder sbDfs = new StringBuilder();
 		StringBuilder sbBfs = new StringBuilder();
 		
-		boolena[] 
+		boolean[] dfsVisited = new boolean[nodeCnt+1];
+		boolean[] bfsVisited = new boolean[nodeCnt+1];
 		
+		dfs(startNode, dfsVisited, sbDfs);
+		bfs(startNode, bfsVisited, sbBfs);
+		
+		System.out.println(sbDfs + "\n" + sbBfs);
+		
+	}
+	private static void dfs(int node, boolean[] visited, StringBuilder sb) {
+		if(visited[node]) return;
+		
+		visited[node] = true;
+		sb.append(node + " ");
+		for(int nextNode:nodeList[node]) {
+			dfs(nextNode, visited, sb);
+		}
+		
+	}
+	private static void bfs(int node, boolean[] visited, StringBuilder sb) {
+		Queue<Integer> queue = new LinkedList<Integer>();
+		
+		queue.offer(node);
+		
+		while(!queue.isEmpty()) {
+			node = queue.poll();
+			
+			if(visited[node]) continue;
+			
+			visited[node] = true;
+			sb.append(node + " ");
+			
+			for(int nextNode: nodeList[node]) {
+				queue.add(nextNode);
+			}
+		}
 	}
 }
