@@ -11,12 +11,14 @@ public class Tomato {
 	private static String[][] tomato;
 	private static int[][] cnt; 
 	private static boolean[][] visit;
+	private static Queue<int[]> que = new LinkedList<int[]>();
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int y = Integer.parseInt(st.nextToken());
 		int x = Integer.parseInt(st.nextToken());
 		tomato = new String[x][y];
+		visit = new boolean[x][y];
 		cnt = new int[x][y];
 		for (int i = 0; i < x; i++) {
 			tomato[i] = br.readLine().split(" ");
@@ -25,12 +27,13 @@ public class Tomato {
 		for(int i=0; i<x; i++) {
 			for (int j = 0; j < y; j++) {
 				if(tomato[i][j].equals("1")) {
-					visit = new boolean[x][y];
-					ripe(i,j);
+					int[] q = {i,j,1};
+					que.offer(q);
 				}
 			}
 		}
 		int max=0;
+		ripe();
 		loop:
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
@@ -46,24 +49,18 @@ public class Tomato {
 		
 		System.out.println(max==-1?-1:max-1);
 	}
-	private static void ripe(int x, int y) {
-		Queue<int[]> que = new LinkedList<int[]>();
+	private static void ripe() {
 		//Queue<Integer> q = new LinkedList<Integer>();
-		int count = 1;
-		boolean first = true;
-		int[] q = {x,y,count};
-		que.offer(q);
 		while(!que.isEmpty()) {
-			q=que.poll();
-			x=q[0];
-			y=q[1];
-			count = q[2];
+			int[]q=que.poll();
+			int x=q[0];
+			int y=q[1];
+			int count = q[2];
 			if(visit[x][y]) continue;
 			
 			visit[x][y] = true;
 			
-			if(first||tomato[x][y].equals("0")) {
-				first=false;
+			if(!tomato[x][y].equals("-1")) {
 				if(cnt[x][y]==0) {
 					cnt[x][y]=count;
 				}else if(cnt[x][y]<count){
