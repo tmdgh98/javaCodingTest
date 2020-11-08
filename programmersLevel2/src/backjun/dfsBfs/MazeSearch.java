@@ -59,8 +59,8 @@ public class MazeSearch {
 						que.offer(next);
 					}
 					if(y<maze[x].length-1) { 
-						int[] next = {x,y+1,cnt};
-						que.offer(next);
+//						int[] next = {x,y+1,cnt};
+						que.offer(new int[] {x,y+1,cnt});
 					}
 				}
 			}
