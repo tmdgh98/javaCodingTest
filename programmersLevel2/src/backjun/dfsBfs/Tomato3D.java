@@ -47,7 +47,7 @@ public class Tomato3D {
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
 				for (int j2 = 0; j2 < z; j2++) {
-					if(cnt[i][j][j2]==0) {
+					if(tomato[i][j][j2]!=-1&&cnt[i][j][j2]==0) {
 						max = -1;
 						break loop;
 					}
