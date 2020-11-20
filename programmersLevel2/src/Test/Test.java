@@ -1,18 +1,29 @@
 package Test;
 
+class SuperObject {
+	public void paint() {
+		draw();
+	}
 
+	public void draw() {
+		draw();
+		System.out.println("Super Object");
+	}
+}
 
-public class Test{
+class SubObject extends SuperObject {
+	public void paint() {
+		super.draw();
+	}
+
+	public void draw() {
+		System.out.println("Sub Object");
+	}
+}
+
+public class Test {
 	public static void main(String[] args) {
-		test2 te = new test2();
-		
-		int sum =te.sum(10,11);
-		System.out.println(sum);
-		
-		te.sum(4.5, 5.5);
-		String a = "abcdeadfsag";
-		
-		System.out.println(a.substring(1));
-		System.out.println(a.substring(1, 3));
+		SuperObject a = new SubObject();
+		a.paint();
 	}
 }
