@@ -9,18 +9,14 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) throws IOException {
 
-        List<Integer> test = new ArrayList<>();
+       int test = 986;
 
-        test.add(1);
-        test.add(2);
-        test.add(3);
-        test.add(4);
-        test.add(5);
-        test.add(6);
-        test.add(7);
+       int length = 1;
+       while(test / 10 != 0){
+           length++;
+           test = test/10;
+       }
 
-        Collections.reverse(test);
-
-        System.out.println(test.toString().replace(" ",""));
+        System.out.println(test + " "  + length);
     }
 }
