@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 /**
  * 백준11403 경로찾기문제
- * 플로이드와샬 알고리즘으로 푼경우
+ * 플로이드 와샬 알고리즘으로 푼경우
  * */
 
 public class BeakJoon11403_FloydWarshall {

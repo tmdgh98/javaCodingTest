@@ -6,13 +6,13 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
- * 구간합 문제
+ *  문제
  * 위 내가 푼거 시간초과로 틀림.... 시간 n*m = O(n2)
  *
  * 아래 구간합알고리즘 보고푼문제
  * 시간 n+m = O(n)
  *
- * 구간합알고리즘
+ * 알고리즘
  * 미리 0부터 시작되는 모든구간별 합계를 구한다
  * 필요구간에 미리구한 합계를 빼기로 계산만한다
  * ex) 5~10구간 합계
