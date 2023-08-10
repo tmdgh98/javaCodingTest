@@ -1,9 +1,13 @@
+package backjun.ezen;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
 
-public class Main {
+public class Baekjoon14940 {
 
     static class Vo {
         int x;
