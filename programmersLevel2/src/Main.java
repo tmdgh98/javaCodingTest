@@ -4,95 +4,80 @@ import java.util.*;
 
 public class Main {
 
-    private static List<Integer> llist = new ArrayList<>();
-    private static List<Integer> rlist = new ArrayList<>();
-    private static int[] arr;
-
     /*
-    1208 부분수열의 합2
-    https://lotuslee.tistory.com/84
-    이분탐색, 투포인터검색
+    1644 문제집
+    소수찾기, 두 포인터 합계
     */
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st.nextToken());
-        int s = Integer.parseInt(st.nextToken());
+        int[][] param = {{40, 10, 10}, {20, 5, 0}, {30, 30, 30}, {70, 0, 70}, {100, 100, 100}};
+        solution(param);
 
-        arr = new int[n];
-
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-        }
-
-        fnSet(0, n / 2, 0, llist);
-        fnSet(n / 2, n, 0, rlist);
-
-        long cnt = fnTwoPoint(s);
-        cnt = s == 0 ? cnt - 1 : cnt;
-
-        System.out.println(cnt);
+        long a = (long) Math.pow(4,15);
+        System.out.println(a);
     }
 
-    private static long fnTwoPoint(int target) {
-        long res = 0;
+    public static String solution(int[][] ability) {
+        String answer = "";
+        char[] arr = answer.toCharArray();
+        List<Character> list = new LinkedList<Character>(Arrays.asList(arr));
 
-        Collections.sort(llist);
-        Collections.sort(rlist, Comparator.reverseOrder());
+        //String input_string
+        // java.util.*
+        //input_string = input_string.toLowerCase();
+        //input_string.toUpperCase();
+        //input_string.charAt(1);
+        //input_string.equals("");
 
-        int li = 0;
-        int ri = 0;
+//        우선순위큐
+//        Queue<int[]> waitHeap = new PriorityQueue<>((o1, o2) -> {
+//            if (o1[0] == o2[0]) {
+//                return o1[1] - o2[1];
+//            }
+//            return o1[0] - o2[0];
+//        });
+//        Queue<int[]> que = new PriorityQueue<>(new Comparator<int[]>() {
+//                    @Override
+//                    public int compare(int[] o1, int[] o2) {
+//                        if (o1[1] == o2[1]) {
+//                            return o1[0] > o2[0] ? 1 : -1;
+//                        }
+//                        return o1[1] > o2[1] ? 1 : -1;
+//                    }
+//                });
+//
+//        que.isEmpty();
+//        que.size();
+//
+//        Queue<String> que2 = new LinkedList<>();
+//        que2.add("1");
+//
+//        List<String> list = new ArrayList<>();
+//        list.add("1");
+//
+//        Stack<String> stack = new Stack<>();
+//        stack.isEmpty();
+//        stack.pop();
+//        stack.push();
+//        stack.peek();
 
-        int sum;
-        long rRes, lRes, lValue, rValue;
-        while (li < llist.size() && ri < rlist.size()) {
-            sum = llist.get(li) + rlist.get(ri);
-            if (sum == target) {
-                rValue = rlist.get(ri);
-                rRes = 0;
-                while (ri < rlist.size() && rlist.get(ri) == rValue) {
-                    rRes++;
-                    ri++;
-                }
+        //Math.pow(4,15)
+        //Math.sqrt(4);
+        //Math.abs(-4);
 
-                lValue = llist.get(li);
-                lRes = 0;
-                while (li < llist.size() && llist.get(li) == lValue) {
-                    lRes++;
-                    li++;
-                }
+        //Collections.sort();
+        //Arrays.fill();
 
-                res += rRes * lRes;
+        //Integer.MAX_VALUE;
+        //Integer.MIN_VALUE;
 
-            } else if (sum > target) {
-                ri++;
-            } else {
-                li++;
-            }
-        }
+        //List<String> list = Arrays.asList(arr);
+        //List<String> list = new ArrayList<>(Arrays.asList(arr));
+        //Collections.sort(list,Comparator.reverseOrder());
 
-        return res;
-    }
 
-    private static int fnListIndexPlus(int i, List<Integer> list) {
-        int res = i;
 
-        while (res < list.size() && list.get(i) == list.get(res)) {
-            res++;
-        }
-
-        return res;
-    }
-
-    private static void fnSet(int s, int e, int t, List<Integer> list) {
-        if (s == e) {
-            list.add(t);
-            return;
-        }
-        fnSet(s + 1, e, arr[s] + t, list);
-        fnSet(s + 1, e, t, list);
+        return answer;
     }
 
 }
