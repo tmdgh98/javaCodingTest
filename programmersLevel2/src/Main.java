@@ -20,6 +20,7 @@ public class Main {
     public static String solution(int[][] ability) {
         String answer = "";
         List<String> list = Arrays.asList(new String[] {"a","b","c"});
+        //test
 
         //String input_string
         // java.util.*
