@@ -19,8 +19,7 @@ public class Main {
 
     public static String solution(int[][] ability) {
         String answer = "";
-        char[] arr = answer.toCharArray();
-        List<Character> list = new LinkedList<Character>(Arrays.asList(arr));
+        List<String> list = Arrays.asList(new String[] {"a","b","c"});
 
         //String input_string
         // java.util.*
